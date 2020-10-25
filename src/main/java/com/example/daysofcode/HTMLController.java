@@ -9,6 +9,4 @@ public class HTMLController {
     public String home(){
         return "<h1>Hey this is my first day of 100 days of code</h1>";
     }
-
-
 }
