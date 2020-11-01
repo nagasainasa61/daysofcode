@@ -8,7 +8,9 @@
 
 <h1>Your Balance Sheet List</h1>
 
+<h2>Total Income : <span th:text="${total_income}"></span> </h2>
 <h2>Total Expense : <span th:text="${total_expense}"></span> </h2>
+<h2>PayDay : <span th:text="${payday}"></span> </h2>
 
 <h2>Income</h2>
 <div th:unless="${#lists.isEmpty(income_records)}">

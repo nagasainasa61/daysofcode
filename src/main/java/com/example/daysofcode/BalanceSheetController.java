@@ -14,6 +14,7 @@ import java.util.ListIterator;
 @RequestMapping("/")
 public class BalanceSheetController {
     Integer totalExpense = 0;
+    Integer totalIncome = 0;
 
     private BalanceSheetRepository balanceSheetRepository;
 
@@ -30,6 +31,15 @@ public class BalanceSheetController {
         List<BalanceSheet> assetsRecords = balanceSheetRepository.findByCustomerAndRecordType(customer, "Assets");
         List<BalanceSheet> liabilitiesRecords = balanceSheetRepository.findByCustomerAndRecordType(customer, "Liabilities");
 
+        ListIterator incomeRecordsIterator = incomeRecords.listIterator();
+
+        totalIncome = 0;
+        while(incomeRecordsIterator.hasNext()){
+            totalIncome += ((BalanceSheet)incomeRecordsIterator.next()).getValue();
+        }
+
+        model.addAttribute("total_income", totalIncome);
+
         ListIterator expenseRecordsIterator = expenseRecords.listIterator();
 
         totalExpense = 0;
@@ -38,6 +48,8 @@ public class BalanceSheetController {
         }
 
         model.addAttribute("total_expense", totalExpense);
+
+        model.addAttribute("payday", totalIncome-totalExpense);
 
         if (incomeRecords != null) {
             model.addAttribute("income_records", incomeRecords);
