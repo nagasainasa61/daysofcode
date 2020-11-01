@@ -1,0 +1,93 @@
+<html>
+<head>
+    <title>Balance Sheet List</title>
+    <link rel="stylesheet" th:href="@{/style.css}"></link>
+</head>
+<body>
+
+
+<h1>Your Balance Sheet List</h1>
+
+<h2>Total Expense : <span th:text="${total_expense}"></span> </h2>
+
+<h2>Income</h2>
+<div th:unless="${#lists.isEmpty(income_records)}">
+    <dl th:each="record : ${income_records}">
+        <dt class="bookHeadline">
+            <span th:text="${record.recordType}"> _</span> for
+            <span th:text="${record.purpose}"></span>
+            (Value : <span th:text="${record.value}">  </span> /- Rupees)
+        </dt>
+    </dl>
+</div>
+
+<div th:if="${#lists.isEmpty(income_records)}">
+    <p>Your Income bucket is empty, Update here when you start earning.</p>
+</div>
+
+<h2>Expense</h2>
+<div th:unless="${#lists.isEmpty(expense_records)}">
+    <dl th:each="record : ${expense_records}">
+        <dt class="bookHeadline">
+            <span th:text="${record.recordType}"> _</span> for
+            <span th:text="${record.purpose}"></span>
+            (Value : <span th:text="${record.value}">  </span> /- Rupees)
+        </dt>
+    </dl>
+</div>
+
+<div th:if="${#lists.isEmpty(expense_records)}">
+    <p>Hey you are not spending in a planned way, Please add you motnhly regular expense details here</p>
+</div>
+
+<h2>Assets</h2>
+<div th:unless="${#lists.isEmpty(assets_records)}">
+    <dl th:each="record : ${assets_records}">
+        <dt class="bookHeadline">
+            <span th:text="${record.recordType}"> _</span> for
+            <span th:text="${record.purpose}"></span>
+            (Value : <span th:text="${record.value}">  </span> /- Rupees)
+        </dt>
+    </dl>
+</div>
+
+<div th:if="${#lists.isEmpty(assets_records)}">
+    <p>Hey, Start building assets, Asset building is one of the key goals need to set in the start of someone's career.</p>
+</div>
+
+<h2>Liabilities</h2>
+<div th:unless="${#lists.isEmpty(liabilities_records)}">
+    <dl th:each="record : ${liabilities_records}">
+        <dt class="bookHeadline">
+            <span th:text="${record.recordType}"> _</span> for
+            <span th:text="${record.purpose}"></span>
+            (Value : <span th:text="${record.value}">  </span> /- Rupees)
+        </dt>
+    </dl>
+</div>
+
+<div th:if="${#lists.isEmpty(liabilities_records)}">
+    <p>No Liabilities. Are you kidding me??</p>
+</div>
+
+
+<hr/>
+<h3>Add a record</h3>
+<form method="POST">
+    <label for="recordType">Record Type:</label>
+<!--    <input type="text" name="recordType" size="50"></input><br/>-->
+    <select id="recordType" name="recordType">
+        <option value="Income">Income</option>
+        <option value="Expense">Expense</option>
+        <option value="Assets">Assets</option>
+        <option value="Liabilities">Liabilities</option>
+    </select><br/>
+    <label for="purpose">Purpose:</label>
+    <input type="text" name="purpose" size="50"></input><br/>
+    <label for="value">Value:</label>
+    <input type="text" name="value" size="15"></input><br/>
+<br/>
+    <input type="submit"></input>
+</form>
+</body>
+</html>
