@@ -1,0 +1,12 @@
+The projects aims at the learning of spring framework.
+
+Target 1 : To get the setup required for spring framework and run a hello world application.
+
+Target 2 : To add thymeleaf and make a simple web application
+
+Target 3 : Add a service where an individual can add his/her cash flow data records.
+
+Target 4 : Differentiate the type of cash flow data record provided it belongs in income, expense, asset and liabilities.
+
+Target 5 : A service from where a transaction or a deal (small/big) can be recorded and which in turn update the affected
+           columns of expense, income, assets and liabilities

@@ -13,8 +13,8 @@
 <h2>PayDay : <span th:text="${payday}"></span> </h2>
 
 <h2>Income</h2>
-<div th:unless="${#lists.isEmpty(income_records)}">
-    <dl th:each="record : ${income_records}">
+
+<dl th:each="record : ${income_records}">
         <dt class="bookHeadline">
             <span th:text="${record.recordType}"> _</span> for
             <span th:text="${record.purpose}"></span>
