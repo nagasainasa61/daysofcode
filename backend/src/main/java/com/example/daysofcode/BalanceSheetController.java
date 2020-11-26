@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.ListIterator;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/fin/")
 public class BalanceSheetController {
     Integer totalExpense = 0;
     Integer totalIncome = 0;
