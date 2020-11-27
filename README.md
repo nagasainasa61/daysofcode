@@ -6,4 +6,4 @@ This is a continuous Learning Task to understand the concepts behind Spring and 
 
 * Clone the Repository.
 * Get the Spring Application up and running, I use IntelliJ.. It is my all time fav these days.
-* Start the React Application. Follow ReadMe in 'daysofcode/client/client_of_code/'
+* Start the React Application. Follow ReadMe in `daysofcode/client/client_of_code/`
