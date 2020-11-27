@@ -1,3 +1,3 @@
 # daysofcode
 
-This is a Continous Learning Task to understand the concepts behind Spring and React 
+This is a continuous Learning Task to understand the concepts behind Spring and React 
